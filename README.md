@@ -18,7 +18,7 @@ This will start interactive login shell. Everything will look like in a
 normal Termux installation.
 
 ```.sh
-docker run -it termux/termux-docker:latest
+docker run -it cultofvecna-bot/termux-docker:latest
 ```
 
 When using the tag `latest`, container will be 32 bit (i686 architecture).
