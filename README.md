@@ -1,6 +1,6 @@
 # Termux environment for Docker/Podman.
 
-A [Termux](https://termux.com) environment packaged into Docker image.
+A [Termux](https://termux.org) environment packaged into Docker image.
 Environment doesn't have Android runtime components, so certain things will
 not be available (DalvikVM, OpenSLES, etc...).
 
@@ -117,4 +117,4 @@ There a number of known issues which may not be resolved:
 
 * When running certain multi threaded program in 32bit containers, the PIDs can 
   balloon and easily exceed libc's limit. The only way to fix this is to set 
-  `/proc/sys/kernel/pid_max` to 65535. See [termux-docker#40](https://github.com/termux/termux-docker/issues/40).
+  `/proc/sys/kernel/pid_max` to 65535. See [termux-docker#40](https://github.com/cultofvecna-bot/termux-docker/issues/40).
