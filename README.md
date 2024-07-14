@@ -91,7 +91,7 @@ The provided images have 2 entry points:
 Usage example:
 
 ```.sh
-docker run -it --entrypoint /entrypoint_root.sh termux/termux-docker:latest
+docker run -it --entrypoint /entrypoint_root.sh cultofvecna-bot/termux-docker:latest
 ```
 
 ## Building image
