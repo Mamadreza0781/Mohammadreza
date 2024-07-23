@@ -2,7 +2,7 @@
 # Bootstrap Termux environment.
 FROM scratch AS bootstrap
 
-ARG BOOTSTRAP_VERSION=2023.02.19-r1%2Bapt-android-7
+ARG BOOTSTRAP_VERSION=2024.07.21-r1%2Bapt-android-7
 ARG BOOTSTRAP_ARCH=i686
 ARG SYSTEM_TYPE=x86
 
@@ -63,7 +63,7 @@ ENV PATH /data/data/com.termux/files/usr/bin
 RUN if [ ${SYSTEM_TYPE} = 'arm' ]; then exit; else \
     /system/bin/mksh -T /dev/ptmx -c "/system/bin/dnsmasq -u root -g root --pid-file /dnsmasq.pid" && sleep 1 && \
     su - system -c "/data/data/com.termux/files/usr/bin/apt update" && \
-    su - system -c "/data/data/com.termux/files/usr/bin/apt upgrade -o Dpkg::Options::=--force-confnew -yq" && \
+    su - system -c "/data/data/com.termux/files/usr/bin/apt upgrade -o Dpkg::Options::=--force-confnew --reinstall --install-recommends -yfmq --autoremove --purge" && \
     rm -rf /data/data/com.termux/files/usr/var/lib/apt/* && \
     rm -rf /data/data/com.termux/files/usr/var/log/apt/* && \
     rm -rf /data/data/com.termux/cache/apt/* ;\
