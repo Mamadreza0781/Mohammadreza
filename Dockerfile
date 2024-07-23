@@ -63,7 +63,7 @@ ENV PATH /data/data/com.termux/files/usr/bin
 RUN if [ ${SYSTEM_TYPE} = 'arm' ]; then exit; else \
     /system/bin/mksh -T /dev/ptmx -c "/system/bin/dnsmasq -u root -g root --pid-file /dnsmasq.pid" && sleep 1 && \
     su - system -c "/data/data/com.termux/files/usr/bin/apt update" && \
-    su - system -c "/data/data/com.termux/files/usr/bin/apt upgrade -o Dpkg::Options::=--force-confnew --reinstall --install-recommends -yfmq --autoremove --purge" && \
+    su - system -c "/data/data/com.termux/files/usr/bin/apt full-upgrade -o Dpkg::Options::=--force-confnew --reinstall --install-recommends -yfmq --autoremove --purge" && \
     rm -rf /data/data/com.termux/files/usr/var/lib/apt/* && \
     rm -rf /data/data/com.termux/files/usr/var/log/apt/* && \
     rm -rf /data/data/com.termux/cache/apt/* ;\
